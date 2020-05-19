@@ -50,7 +50,6 @@ const keyDown = e => {
   if(e.keyCode == 13) {
     axios.post("https://bee-short.herokuapp.com/api/url/link", {url: url.url})
     .then((res) => {
-      console.log(res.data,"RES")
       setUrl({url: ""})
       setShortUrl({url: `beeshort.link/${res.data.url}`})
       setTimeout(() => {
