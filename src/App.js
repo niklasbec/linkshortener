@@ -85,6 +85,10 @@ const keyDown = e => {
 
   return (
     <div className="App">
+    <div className="logo-div">
+    <img className="logo" src="https://image.flaticon.com/icons/png/512/2657/2657849.png" alt="logo of a bee" />
+    <h1>beeshort</h1>
+    </div>
     {errorToggle ? <div className="error"><p>There was an error, please try again later.</p></div> : null}
     {successToggle ? <div className="success"><p>Success! Link copied to clipboard.</p></div> : null}
     <div className="shorten-flex">

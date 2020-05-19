@@ -1,6 +1,7 @@
 .App {
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
   width: 100vw;
   height: 100vh;
@@ -22,7 +23,6 @@
   font-size: 35px;
   outline: none;
   border-radius: 8px;
-  margin-right: 2vw;
   border-style: none;
   -webkit-box-shadow: 10px 10px 23px -13px rgba(0,0,0,0.75);
 -moz-box-shadow: 10px 10px 23px -13px rgba(0,0,0,0.75);
@@ -31,7 +31,8 @@ box-shadow: 10px 10px 23px -13px rgba(0,0,0,0.75);
 
 .shorten-flex {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: center;
 }
 
 .a {
@@ -48,6 +49,7 @@ box-shadow: 10px 10px 23px -13px rgba(0,0,0,0.75);
   -webkit-box-shadow: 10px 10px 23px -13px rgba(0,0,0,0.75);
 -moz-box-shadow: 10px 10px 23px -13px rgba(0,0,0,0.75);
 box-shadow: 10px 10px 23px -13px rgba(0,0,0,0.75);
+margin-top: 20px;
 }
 
 .error {
@@ -74,4 +76,16 @@ box-shadow: 10px 10px 23px -13px rgba(0,0,0,0.75);
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.logo {
+  width: 10vw;
+}
+
+.logo-div {
+  display: flex;
+  align-items: center;
+  color: white;
+  font-size: 40px;
+  margin-bottom: 50px;
 }
