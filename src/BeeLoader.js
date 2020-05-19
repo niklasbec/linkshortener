@@ -4,7 +4,7 @@ function BeeLoader() {
 
     return(
     <div className="loader">
-        <div class="loader-wrapper">
+        
     <div class="loader-container">
      <svg version="1.1" id="loader-bee" class="loader-bee" xmlns="http://www.w3.org/2000/svg"  x="0px" y="0px"
 	 viewBox="0 0 68.5 68.5" enable-background="new 0 0 68.5 68.5">
@@ -97,7 +97,6 @@ function BeeLoader() {
           </g>
         </svg>
 
-        </div>
         </div>
     </div>
 )}
