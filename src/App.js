@@ -50,8 +50,8 @@ function App() {
       axios
         .post("https://bee-short.herokuapp.com/api/url/link", { url: url.url })
         .then(async (res) => {
-          setUrl({ url: `beeshort.link/${res.data.url}` });
-          // setShortUrl({ url: `beeshort.link/${res.data.url}` });
+          setUrl({ url: `bshrt.pw/${res.data.url}` });
+          // setShortUrl({ url: `bshrt.pw/${res.data.url}` });
           setLoading(false);
           // await copyToClipboard(shortUrl.url);
           setSuccessToggle(true);
@@ -76,8 +76,8 @@ function App() {
     axios
         .post("https://bee-short.herokuapp.com/api/url/link", { url: url.url })
         .then((res) => {
-          setUrl({ url: `beeshort.link/${res.data.url}` });
-          // setShortUrl({ url: `beeshort.link/${res.data.url}` });
+          setUrl({ url: `bshrt.pw/${res.data.url}` });
+          // setShortUrl({ url: `bshrt.pw/${res.data.url}` });
           setLoading(false);
           // copyToClipboard(shortUrl.url);
           setSuccessToggle(true);
