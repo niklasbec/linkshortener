@@ -1,38 +1,77 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  /* background-image: linear-gradient(to right, #43e97b 0%, #38f9d7 100%); */
+  /* background-image: linear-gradient( 135deg, #81FBB8 10%, #28C76F 100%); */
+  /* background-image: linear-gradient( 135deg, #5EFCE8 10%, #736EFE 100%); */
+  /* background-image: linear-gradient( 135deg, #52E5E7 10%, #130CB7 100%); */
+  /* background-image: linear-gradient( 135deg, #FEC163 10%, #DE4313 100%); */
+  background-image: linear-gradient( 135deg, #FFE985 10%, #FA742B 100%);
+  font-family: 'Inter', sans-serif;
+}
+
+.shortener-input {
+  width: 40vw;
+  height: 9vh;
+  padding: 0 25px 0 25px;
+  font-size: 35px;
+  outline: none;
+  border-radius: 8px;
+  margin-right: 2vw;
+  border-style: none;
+  -webkit-box-shadow: 10px 10px 23px -13px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 23px -13px rgba(0,0,0,0.75);
+box-shadow: 10px 10px 23px -13px rgba(0,0,0,0.75);
+}
+
+.shorten-flex {
+  display: flex;
+  flex-direction: row;
+}
+
+.a {
+  width: 16vw;
+  height: 9vh;
+  border-radius: 8px;
+  background-color: white;
+  font-size: 30px;
+  cursor: pointer;
+  font-weight: 300;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  -webkit-box-shadow: 10px 10px 23px -13px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 23px -13px rgba(0,0,0,0.75);
+box-shadow: 10px 10px 23px -13px rgba(0,0,0,0.75);
+}
+
+.error {
+  position: absolute;
+  width: 50vw;
+  height: 8vh;
+  background-color: rgb(194, 35, 35);
   color: white;
+  border-radius: 8px;
+  top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.success {
+  position: absolute;
+  width: 50vw;
+  height: 8vh;
+  background-color: rgb(35, 194, 96);
+  color: white;
+  border-radius: 8px;
+  top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
