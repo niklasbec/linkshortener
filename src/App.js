@@ -1,8 +1,10 @@
 import React, {useState} from 'react';
+import {Route} from "react-router-dom"
 import './App.css';
 import axios from "axios"
 import About from "./About"
 import BeeLoader from './BeeLoader';
+import Link from "./Link"
 
 function App() {
 
@@ -15,6 +17,7 @@ function App() {
   const [errorToggle, setErrorToggle] = useState(false)
   const [successToggle, setSuccessToggle] = useState(false)
   const [aboutToggle, setAboutToggle] = useState(false)
+  const [loading, setLoading] = useState(false)
 
   function copyToClipboard(text) {
     
@@ -45,19 +48,25 @@ function App() {
 
 const keyDown = e => {
   if(e.keyCode == 13) {
-    axios.post("", {url: url.url})
+    axios.post("https://bee-short.herokuapp.com/api/url/link", {url: url.url})
     .then((res) => {
+      console.log(res.data,"RES")
       setUrl({url: ""})
-      setShortUrl({url: res.data.url})
-      copyToClipboard(shortUrl.url)
-      setSuccessToggle(true)
+      setShortUrl({url: `beeshort.link/${res.data.url}`})
       setTimeout(() => {
-        setSuccessToggle(false)
-      }, 3000)
+        setLoading(false)
+        console.log("Bitch", shortUrl.url);
+        copyToClipboard(shortUrl.url)
+        setSuccessToggle(true)
+        setTimeout(() => {
+          setSuccessToggle(false)
+        }, 3000)
+      }, 1000)
     })
     .catch((err) => {
       console.log(err)
       setErrorToggle(true)
+      setLoading(false)
       setTimeout(() => {
         setErrorToggle(false)
       }, 3000)
@@ -67,23 +76,29 @@ const keyDown = e => {
 
   const handleSubmit = e => {
       e.preventDefault()
-    axios.post("", {url: url.url})
-    .then((res) => {
-      setUrl({url: ""})
-      setShortUrl({url: res.data.url})
-      copyToClipboard(shortUrl.url)
-      setSuccessToggle(true)
-      setTimeout(() => {
-        setSuccessToggle(false)
-      }, 3000)
-    })
-    .catch((err) => {
-      console.log(err)
-      setErrorToggle(true)
-      setTimeout(() => {
-        setErrorToggle(false)
-      }, 3000)
-    })
+      setLoading(true)
+      axios.post("https://bee-short.herokuapp.com/api/url/link", {url: url.url})
+      .then((res) => {
+        setUrl({url: ""})
+        setShortUrl({url: `beeshort.link/${res.data.url}`})
+        setTimeout(() => {
+          setLoading(false)
+          console.log("Bitch", shortUrl.url);
+          copyToClipboard(shortUrl.url)
+          setSuccessToggle(true)
+          setTimeout(() => {
+            setSuccessToggle(false)
+          }, 3000)
+        }, 1000)
+      })
+      .catch((err) => {
+        console.log(err)
+        setErrorToggle(true)
+        setLoading(false)
+        setTimeout(() => {
+          setErrorToggle(false)
+        }, 3000)
+      })
   }
 
   const toggleAbout = (e) => {
@@ -109,7 +124,11 @@ const keyDown = e => {
     ?
     </div>
     {aboutToggle ? <About toggle={toggleAbout} /> : null}
-    <BeeLoader />
+    {loading ?
+    <BeeLoader /> :
+    null
+    }
+    <Route path="/:id" render={(props) => (<Link {...props}/> )}/>
     </div>
   );
 }

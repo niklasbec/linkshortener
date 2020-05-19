@@ -27,6 +27,7 @@
   -webkit-box-shadow: 10px 10px 23px -13px rgba(0,0,0,0.75);
 -moz-box-shadow: 10px 10px 23px -13px rgba(0,0,0,0.75);
 box-shadow: 10px 10px 23px -13px rgba(0,0,0,0.75);
+text-align: center;
 }
 
 .shorten-flex {
@@ -139,6 +140,17 @@ margin-top: 20px;
   width: 80%;
   margin-top: 25%;
   font-size: 18px;
+}
+
+
+.link-component {
+  background-color: black;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 
