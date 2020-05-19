@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import './App.css';
 import axios from "axios"
+import About from "./About"
+import BeeLoader from './BeeLoader';
 
 function App() {
 
@@ -12,6 +14,7 @@ function App() {
   })
   const [errorToggle, setErrorToggle] = useState(false)
   const [successToggle, setSuccessToggle] = useState(false)
+  const [aboutToggle, setAboutToggle] = useState(false)
 
   function copyToClipboard(text) {
     
@@ -83,6 +86,11 @@ const keyDown = e => {
     })
   }
 
+  const toggleAbout = (e) => {
+    e.preventDefault()
+    setAboutToggle(!aboutToggle)
+  }
+
   return (
     <div className="App">
     <div className="logo-div">
@@ -97,6 +105,11 @@ const keyDown = e => {
         <a onClick={handleSubmit}>Shorten URL</a>
       </div>
     </div>
+    <div className="about" onClick={toggleAbout}>
+    ?
+    </div>
+    {aboutToggle ? <About toggle={toggleAbout} /> : null}
+    <BeeLoader />
     </div>
   );
 }
