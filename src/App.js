@@ -123,6 +123,7 @@ function App() {
       <div className="shorten-flex">
         <input
           className="shortener-input"
+          autocomplete="off"
           name="url"
           value={url.url}
           onChange={handleChange}
