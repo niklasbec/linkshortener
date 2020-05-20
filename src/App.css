@@ -207,3 +207,75 @@ svg {
 .bee-icon, .circle {
   fill: #ffffff; 
 }
+
+
+/*MEDIA QUERIES*/
+
+@media (min-width: 750px) and (max-width: 1250px) {
+  .a {
+    width: 25vw;
+  }
+
+  .about {
+    background-color: rgb(32, 32, 32);
+    width: 50px;
+    height: 50px;
+  }
+  
+  .about-inner {
+    width: 40vw;
+    height: 80vh;
+    background-color: white;
+    border-radius: 8px;
+  }
+}
+
+@media (max-width: 750px) {
+  .a {
+    width: 30vw;
+    font-size: 24px;
+  }
+  .shortener-input {
+    width: 50vw;
+  }
+  .about {
+    background-color: rgb(32, 32, 32);
+    width: 50px;
+    height: 50px;
+  }
+  
+  .about-inner {
+    width: 70vw;
+    height: 80vh;
+    background-color: white;
+    border-radius: 8px;
+  }
+}
+
+/*Phones*/
+
+@media (pointer:none), (pointer:coarse) {
+  .a {
+    width: 45vw;
+    height: 5vh;
+    font-size: 24px;
+    margin-top: 30px;
+  }
+  .shortener-input {
+    width: 60vw;
+  }
+
+
+.about {
+  background-color: rgb(32, 32, 32);
+  width: 50px;
+  height: 50px;
+}
+
+.about-inner {
+  width: 70vw;
+  height: 80vh;
+  background-color: white;
+  border-radius: 8px;
+}
+}
