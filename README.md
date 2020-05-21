@@ -1,4 +1,4 @@
-## Available Scripts
+## BeeShort Link Shortener
 
 This is project is a Full Stack APP created using MERN Stack.
 The Backend is hosted on Heroku and can be seen here:
